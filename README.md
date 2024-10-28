@@ -4,6 +4,11 @@
 
 Welcome to the **Amazon Sales Inventory Dashboard**! This powerful and dynamic dashboard offers an insightful look into e-commerce sales trends, equipping businesses with the tools to decode customer behaviour patterns, optimize pricing strategies, and evaluate performance effectively. With its sleek and interactive visualizations, the dashboard transforms data into actionable insights, empowering stakeholders to make informed, data-driven decisions that foster growth and operational excellence.
 
+## 🔗 Dashboard Access
+
+Experience the power of insights with our live dashboard:  
+**[Explore the Amazon Sales Inventory Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjYxMTk4NWYtYzQxMC00YjY1LTgyOGItNDk3MjhlMjBiYTk5IiwidCI6Ijk2NDY0YThhLWY4ZWQtNDBiMS05OWUyLTVmNmI1MGEyMDI1MCIsImMiOjN9)**
+
 <img src="https://github.com/user-attachments/assets/93b61eff-407b-45b2-acb2-32c2dd7d5b97" alt="Page 1"/>
 
 ![image](https://github.com/user-attachments/assets/c2cfe6a3-c820-455a-a041-d70b6514b0b0)
@@ -29,10 +34,6 @@ Our dashboard tracks vital e-commerce KPIs that illuminate your sales landscape:
 - **Performance Tracking:** Identify high-performing regions and optimize logistics to meet real-time demand effectively.  
 - **Enhanced Supply Chain Efficiency:** Adapt to regional demand trends, driving growth while maximizing operational efficiency.  
 
-## 🔗 Dashboard Access
-
-Experience the power of insights with our live dashboard:  
-**[Explore the Amazon Sales Inventory Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMjYxMTk4NWYtYzQxMC00YjY1LTgyOGItNDk3MjhlMjBiYTk5IiwidCI6Ijk2NDY0YThhLWY4ZWQtNDBiMS05OWUyLTVmNmI1MGEyMDI1MCIsImMiOjN9)**
 
 ## 🛠️ Technologies Used
 
