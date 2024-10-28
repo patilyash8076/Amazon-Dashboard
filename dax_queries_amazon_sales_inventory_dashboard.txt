@@ -1,0 +1,128 @@
+# DAX Queries for Amazon Sales Inventory Dashboard
+
+## 1. Total Sales
+Calculate the total sales amount.
+```dax
+Total Sales = SUM(Sales[SalesAmount])
+```
+
+## 2. Total Quantity Sold
+Calculate the total quantity of products sold.
+```dax
+Total Quantity Sold = SUM(Sales[QuantitySold])
+```
+
+## 3. Number of Sellers
+Count the distinct number of sellers in the dataset.
+```dax
+Number of Sellers = DISTINCTCOUNT(Sales[SellerID])
+```
+
+## 4. Sales by State
+Calculate total sales grouped by state.
+```dax
+Sales by State = 
+SUMMARIZE(
+    Sales,
+    Sales[State],
+    "Total Sales", SUM(Sales[SalesAmount])
+)
+```
+
+## 5. Sales by City
+Calculate total sales grouped by city.
+```dax
+Sales by City = 
+SUMMARIZE(
+    Sales,
+    Sales[City],
+    "Total Sales", SUM(Sales[SalesAmount])
+)
+```
+
+## 6. Delivery Status Counts
+Count the number of orders based on their delivery status (e.g., Pending, Shipped, Returned).
+```dax
+Delivery Status Counts = 
+SUMMARIZE(
+    Sales,
+    Sales[DeliveryStatus],
+    "Count", COUNTROWS(Sales)
+)
+```
+
+## 7. Products Shipped by City
+Calculate the number of products shipped, grouped by city.
+```dax
+Products Shipped by City = 
+SUMMARIZE(
+    Sales,
+    Sales[City],
+    "Total Shipped", SUM(Sales[QuantityShipped])
+)
+```
+
+## 8. Statewise Shipping Frequency
+Calculate the total number of shipments per state over time.
+```dax
+Statewise Shipping Frequency = 
+SUMMARIZE(
+    Sales,
+    Sales[State],
+    Sales[ShipmentDate],
+    "Total Shipments", COUNT(Sales[OrderID])
+)
+```
+
+## 9. Average Sales Per Seller
+Calculate the average sales per seller.
+```dax
+Average Sales Per Seller = 
+DIVIDE(
+    [Total Sales],
+    [Number of Sellers],
+    0
+)
+```
+
+## 10. Sales Growth Percentage
+Calculate the sales growth percentage compared to the previous period.
+```dax
+Sales Growth % = 
+VAR CurrentSales = [Total Sales]
+VAR PreviousSales = CALCULATE([Total Sales], PREVIOUSMONTH(Sales[OrderDate]))
+RETURN
+IF(
+    NOT(ISBLANK(PreviousSales)),
+    DIVIDE(CurrentSales - PreviousSales, PreviousSales, 0),
+    BLANK()
+)
+```
+
+## 11. Total Sales by Month
+Calculate total sales for each month.
+```dax
+Total Sales by Month = 
+SUMMARIZE(
+    Sales,
+    Sales[Month],
+    "Total Sales", SUM(Sales[SalesAmount])
+)
+```
+
+## 12. Top-Selling Products
+Identify the top-selling products based on quantity sold.
+```dax
+Top-Selling Products = 
+TOPN(
+    10,
+    SUMMARIZE(
+        Sales,
+        Sales[ProductName],
+        "Total Quantity Sold", SUM(Sales[QuantitySold])
+    ),
+    [Total Quantity Sold],
+    DESC
+)
+```
+
